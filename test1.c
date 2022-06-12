@@ -2,6 +2,7 @@
 #include "figures.h"
 
 void display(){
-	char** wSquare = whiteSquare;
-	interpreter(wSquare);
+	char** reverseKnight = reverse(knight);
+	interpreter(reverseKnight);
+	libMemoria(reverseKnight);
 }

@@ -36,7 +36,7 @@ char** rotateR(char**);
  * return a new picture, the original picture with reverse colors
  * The user must liberate the memory space reserved for the string array (the picture) 
  */
-char** reverse(char**);
+char** reverse(char** fig);
 
 /*
  * return a new picture, the first picture over the second picture
@@ -79,4 +79,7 @@ char** repeatV(char**, int);
  * dangerous for your heatlh 
  */
 void interpreter(char**);
+
+void libMemoria(char**);
+
 #endif

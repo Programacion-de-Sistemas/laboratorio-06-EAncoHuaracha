@@ -1,6 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+//funcion para liberar memoria
+void libMemoria(char** figura){
+  char** tmp = figura;
+
+  while(*tmp){
+    free(*tmp);
+    tmp++;
+  }
+
+  free(figura);
+}
+
+
 //devuelve el simbolo contrario 
 char negative(char c){
 	switch(c){
@@ -37,7 +51,7 @@ int ancho(char** figura){
 	return cont;
 }
 
-char** flipV(char**);
+char** flipV(char** );
 
 char** flipH(char**);
 
@@ -45,7 +59,7 @@ char** rotateL(char**);
 
 char** rotateR(char**);
 
-char** superImpose(char**, char**);
+char** superImpose(char** , char** );
 
 char** join(char**, char**);
 
