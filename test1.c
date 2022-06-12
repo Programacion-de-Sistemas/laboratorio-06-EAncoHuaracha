@@ -2,7 +2,9 @@
 #include "figures.h"
 
 void display(){
-	char** reverseKnight = reverse(knight);
-	interpreter(reverseKnight);
-	libMemoria(reverseKnight);
+	char** sImp = superImpose(rook, whiteSquare);
+
+	interpreter(sImp);
+
+	libMemoria(sImp);
 }
