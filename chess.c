@@ -17,12 +17,23 @@ char negative(char c){
 	}
 }
 
+//Calcula la altura de la figura
+int altura(char** figura){
+	char** tmpA = figura;
+	int cont = 0;
+
+	while(*tmpA){ cont++; tmpA++;}
+
+	return cont;
+}
+
 // Calcular el tamaño de la figura recibidA
 char** reverse(char** figura){
-  char** tmp = figura;
-  int cant = 0;
-  while(*tmp){cant++; tmp++; }
-  printf("tamaño:%d\n",cant);
-
-  return tmp;
+	char** tmp = figura;
+	int cant = 0;
+	while(*tmp){cant++; tmp++; }
+	printf("tamaño:%d\n",cant);
+	printf("altura:%d\n",altura(figura));
+	return tmp;
 }
+
