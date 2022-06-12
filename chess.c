@@ -27,6 +27,16 @@ int altura(char** figura){
 	return cont;
 }
 
+//Calcula la altura de la figura
+int ancho(char** figura){
+	char** tmp = figura;
+	int cont = 0;
+
+	while(*tmp){ cont++; tmp++;}
+
+	return cont;
+}
+
 // Calcular el tamaño de la figura recibidA
 char** reverse(char** figura){
 	char** tmp = figura;
@@ -34,6 +44,7 @@ char** reverse(char** figura){
 	while(*tmp){cant++; tmp++; }
 	printf("tamaño:%d\n",cant);
 	printf("altura:%d\n",altura(figura));
+	printf("ancho:%d\n",ancho(figura));
 	return tmp;
 }
 
