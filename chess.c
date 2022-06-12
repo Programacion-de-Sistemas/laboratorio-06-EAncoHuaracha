@@ -39,12 +39,29 @@ int ancho(char** figura){
 
 // Calcular el tamaño de la figura recibidA
 char** reverse(char** figura){
-	char** tmp = figura;
-	int cant = 0;
-	while(*tmp){cant++; tmp++; }
-	printf("tamaño:%d\n",cant);
-	printf("altura:%d\n",altura(figura));
-	printf("ancho:%d\n",ancho(figura));
-	return tmp;
+	char** tmp = (char**) malloc(sizeof(char*) * 58);
+	char** tmp2 = tmp;
+	char** figP = figura;
+	char* alm1;
+	char* alm2;
+	int cont = 0;
+	while(*figP){
+		*tmp = (char*) malloc(sizeof(char) * 58);
+		alm1 = *tmp;
+		alm2 = *figP;
+
+		while(*alm2){
+			*alm1 = negative(*alm2);
+			alm1++;
+			alm2++;
+			cont++;
+		}
+		*alm1 = 0;
+		tmp++;
+		figP++;
+	}
+	*tmp = 0;
+	return tmp2;
 }
+
 
