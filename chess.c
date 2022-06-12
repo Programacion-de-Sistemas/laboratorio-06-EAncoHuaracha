@@ -83,7 +83,7 @@ char** superImpose(char** sobre, char** abajo){
 			if(*alm2 == ' ')
 				*alm1 = *alm3;
 			else
-				*alm3 = *alm2;
+				*alm1 = *alm2;
 
 			alm1++;
 			alm2++;
