@@ -37,6 +37,24 @@ int ancho(char** figura){
 	return cont;
 }
 
+char** flipV(char**);
+
+char** flipH(char**);
+
+char** rotateL(char**);
+
+char** rotateR(char**);
+
+char** superImpose(char**, char**);
+
+char** join(char**, char**);
+
+char** up(char**, char**);
+
+char** repeatH(char**, int);
+
+char** repeatV(char**, int);
+
 // Calcular el tamaño de la figura recibidA
 char** reverse(char** figura){
 	char** tmp = (char**) malloc(sizeof(char*) * 58);
