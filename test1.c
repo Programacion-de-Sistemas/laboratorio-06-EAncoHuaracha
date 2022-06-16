@@ -4,9 +4,11 @@
 void display(){
 	char** joinKR = join(knight, rook);
 
-	interpreter(joinKR);
+	char** tmp = join(joinKR,rook);
 
-	libMemoria(joinKR);
+	interpreter(tmp);
+
+	libMemoria(tmp);
 
 	
 }
