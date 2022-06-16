@@ -2,9 +2,9 @@
 #include "figures.h"
 
 void display(){
-	char** fVknight = flipV(knight);
+	char** fVnight = flipV(knight);
 
-	interpreter(fVknight);
+	interpreter(fVnight);
 
-	libMemoria(fVknight);
+	
 }
