@@ -81,11 +81,11 @@ char** flipV(char** figura){
 		contR = a - 1;
 
 		//se ejecuta este bucle hasta que llegue a 0 el recorrido
-			while(contR >= 0){
-				*alm1 = alm2[contR];
-				alm1++;
-				contR--;
-			}
+		while(contR >= 0){
+			*alm1 = alm2[contR];
+			alm1++;
+			contR--;
+		}
 		*alm1 = 0;
 		tmp++;
 		tmp3++;
@@ -206,11 +206,17 @@ char** join(char** izq, char** der){
 		alm2 = *tmp;
 
 		while(*alm1){
-			*alm1 = *alm2;
+			*alm2 = *alm1;
 			alm1++;
 			alm2++;
 		}
+
 		alm1 = *tmp3Der;
+		while(*alm1){
+			*alm2 = *alm1;
+			alm1++;
+			alm2++;
+		}
 
 		*alm2 = 0;
 		tmp++;
