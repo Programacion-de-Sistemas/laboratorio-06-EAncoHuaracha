@@ -51,7 +51,50 @@ int ancho(char** figura){
 	return cont;
 }
 
-char** flipV(char** fig);
+char** flipV(char** figura){
+
+	//calculamos altura y ancho
+	int l = altura(figura);
+	int a = ancho(figura);
+
+	//cargamos el bloque de memoria
+	char** tmp = (char**) malloc(sizeof(char*) * l);
+	//respaldamos tmp en tmp2
+	char** tmp2 = tmp;
+
+	char** tmp3 = figura;
+	char* alm1;
+	char* alm2;
+
+	// se crea un contador para recorrer
+	int cont = 0;
+
+	int contR;
+
+	while(*tmp3){
+		//cargamos el bloque de memoria con el ancho de la figura
+		*tmp = (char*) malloc(sizeof(char) * a);
+		alm1 = *tmp;
+		alm2 = *tmp3;
+		
+		//cuenta para atras
+		contR = a --;
+
+		//se ejecuta este bucle hasta que llegue a 0 el recorrido
+		while(contR >= 0){
+			*alm1 = alm2[contR];
+			alm1++;
+			alm2++;
+			contR--;
+		}
+		*alm1 = 0;
+		tmp++;
+		tmp3++;
+	}
+	*tmp = 0;
+	return tmp2;
+
+}
 
 char** flipH(char**);
 
