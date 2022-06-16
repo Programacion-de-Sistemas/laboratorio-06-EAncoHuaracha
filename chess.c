@@ -51,7 +51,7 @@ int ancho(char** figura){
 	return cont;
 }
 
-char** flipV(char** );
+char** flipV(char** fig);
 
 char** flipH(char**);
 
@@ -107,18 +107,29 @@ char** repeatH(char**, int);
 char** repeatV(char**, int);
 
 char** reverse(char** figura){
-	char** tmp = (char**) malloc(sizeof(char*) * 58);
+	//calculamos altura y ancho
+	int l = altura(figura);
+	int a = ancho(figura);
+
+	//cargamos el bloque de memoria
+	char** tmp = (char**) malloc(sizeof(char*) * l);
+	//respaldamos tmp en tmp2
 	char** tmp2 = tmp;
+
 	char** figP = figura;
 	char* alm1;
 	char* alm2;
+
+	// se crea un contador para recorrer
 	int cont = 0;
 	while(*figP){
-		*tmp = (char*) malloc(sizeof(char) * 58);
+		//cargamos el bloque de memoria con el ancho de la figura
+		*tmp = (char*) malloc(sizeof(char) * a);
 		alm1 = *tmp;
 		alm2 = *figP;
 
 		while(*alm2){
+			// se realiza el intercambio por su negativo llamando a la funcion negative.
 			*alm1 = negative(*alm2);
 			alm1++;
 			alm2++;

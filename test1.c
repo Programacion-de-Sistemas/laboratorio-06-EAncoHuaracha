@@ -2,7 +2,7 @@
 #include "figures.h"
 
 void display(){
-	char** sImp = superImpose(rook, whiteSquare);
+	char** sImp = reverse(knight);
 
 	interpreter(sImp);
 
