@@ -2,9 +2,8 @@
 #include "figures.h"
 
 void display(){
-	char** joinKR = join(knight, rook);
 
-	char** tmp = join(joinKR,rook);
+	char** tmp = repeatH(rook,4);
 
 	interpreter(tmp);
 

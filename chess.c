@@ -229,7 +229,54 @@ char** join(char** izq, char** der){
 
 char** up(char**, char**);
 
-char** repeatH(char**, int);
+char** carga(char** figura){
+	//calculamos altura y ancho
+	int l = altura(figura);
+	int a = ancho(figura);
+
+	//cargamos el bloque de memoria
+	char** tmp = (char**) malloc(sizeof(char*) * l);
+	//respaldamos tmp en tmp2
+	char** tmp2 = tmp;
+
+	char** tmp3 = figura;
+	char* alm1;
+	char* alm2;
+
+	// se crea un contador para recorrer
+	int cont = 0;
+	while(*tmp3){
+		//cargamos el bloque de memoria con el ancho de la figura
+		*tmp = (char*) malloc(sizeof(char) * a);
+		alm1 = *tmp;
+		alm2 = *tmp3;
+
+		while(*alm2){
+			*alm1 = *alm2;
+			alm1++;
+			alm2++;
+			cont++;
+		}
+		*alm1 = 0;
+		tmp++;
+		tmp3++;
+	}
+	*tmp = 0;
+	return tmp2;
+
+}
+char** repeatH(char** figura, int n){
+	char** repF = carga(figura);
+	char** tmp;
+	while(n != 1){
+		tmp = repF;
+		repF = join(repF, figura);
+		n--;
+	}
+
+	return repF;
+}
+
 
 char** repeatV(char**, int);
 

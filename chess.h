@@ -82,4 +82,5 @@ void interpreter(char**);
 
 void libMemoria(char**);
 
+char** carga(char**);
 #endif
