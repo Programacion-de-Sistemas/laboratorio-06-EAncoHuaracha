@@ -58,7 +58,7 @@ char** flipV(char** figura){
 	int a = ancho(figura);
 
 	//cargamos el bloque de memoria
-	char** tmp = (char**) malloc(sizeof(char*) * l);
+	char** tmp = (char**) malloc(sizeof(char*) * (l +1));
 	//respaldamos tmp en tmp2
 	char** tmp2 = tmp;
 
@@ -73,18 +73,17 @@ char** flipV(char** figura){
 
 	while(*tmp3){
 		//cargamos el bloque de memoria con el ancho de la figura
-		*tmp = (char*) malloc(sizeof(char) * a);
+		*tmp = (char*) malloc(sizeof(char) * (a + 1));
 		alm1 = *tmp;
 		alm2 = *tmp3;
 		
 		//cuenta para atras
-		contR = a --;
+		contR = a - 1;
 
 		//se ejecuta este bucle hasta que llegue a 0 el recorrido
 		while(contR >= 0){
 			*alm1 = alm2[contR];
 			alm1++;
-			alm2++;
 			contR--;
 		}
 		*alm1 = 0;
