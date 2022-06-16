@@ -41,9 +41,9 @@ int altura(char** figura){
 	return cont;
 }
 
-//Calcula la altura de la figura
+//Calcula la ancho de la figura
 int ancho(char** figura){
-	char** tmp = figura;
+	char* tmp = *figura;
 	int cont = 0;
 
 	while(*tmp){ cont++; tmp++;}
