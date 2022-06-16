@@ -2,11 +2,11 @@
 #include "figures.h"
 
 void display(){
-	char** fHknight = flipH(knight);
+	char** joinKR = join(knight, rook);
 
-	interpreter(fHknight);
+	interpreter(joinKR);
 
-	libMemoria(fHknight);
+	libMemoria(joinKR);
 
 	
 }

@@ -81,11 +81,11 @@ char** flipV(char** figura){
 		contR = a - 1;
 
 		//se ejecuta este bucle hasta que llegue a 0 el recorrido
-		while(contR >= 0){
-			*alm1 = alm2[contR];
-			alm1++;
-			contR--;
-		}
+			while(contR >= 0){
+				*alm1 = alm2[contR];
+				alm1++;
+				contR--;
+			}
 		*alm1 = 0;
 		tmp++;
 		tmp3++;
@@ -175,7 +175,51 @@ char** superImpose(char** sobre, char** abajo){
 	*tmp = 0;
 	return tmp2;
 }
-char** join(char**, char**);
+char** join(char** izq, char** der){
+	//calculamos altura y ancho de la figura a la izquierda
+	int l = altura(izq);
+	int aIzq = ancho(izq);
+
+	//cargamos el bloque de memoria
+	char** tmp = (char**) malloc(sizeof(char*) * (l +1));
+	//respaldamos tmp en tmp2
+	char** tmp2 = tmp;
+	char** tmp3Izq = izq;
+
+
+	char* alm1;
+	char* alm2;
+
+
+	//Calculamos el ancho de la figura de la derecha
+	//No se calcula la altura ya que es la misma
+	int aDer = ancho(der);
+	int a = aIzq + aDer;
+	char** tmp3Der = der;
+
+	//se ejecuta este bucle hasta que llegue a 0 el recorrido
+	while(*tmp3Izq){
+
+		//cargamos el bloque de memoria con el ancho de la figura
+		*tmp = (char*) malloc(sizeof(char) * (a + 1));
+		alm1 = *tmp3Izq;
+		alm2 = *tmp;
+
+		while(*alm1){
+			*alm1 = *alm2;
+			alm1++;
+			alm2++;
+		}
+		alm1 = *tmp3Der;
+
+		*alm2 = 0;
+		tmp++;
+		tmp3Izq++;
+		tmp3Der++;
+	}
+	*tmp = 0;
+	return tmp2;
+}
 
 char** up(char**, char**);
 
