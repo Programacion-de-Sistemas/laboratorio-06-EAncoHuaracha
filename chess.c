@@ -50,7 +50,7 @@ int ancho(char** figura){
 
 	return cont;
 }
-
+// crea una imagen que es un espejo vertical de la imagen original
 char** flipV(char** figura){
 
 	//calculamos altura y ancho
@@ -66,11 +66,9 @@ char** flipV(char** figura){
 	char* alm1;
 	char* alm2;
 
-	// se crea un contador para recorrer
-	int cont = 0;
-
 	int contR;
 
+	// se recorre la figura
 	while(*tmp3){
 		//cargamos el bloque de memoria con el ancho de la figura
 		*tmp = (char*) malloc(sizeof(char) * (a + 1));
@@ -82,6 +80,7 @@ char** flipV(char** figura){
 
 		//se ejecuta este bucle hasta que llegue a 0 el recorrido
 		while(contR >= 0){
+			// se guarda el valor encontrado
 			*alm1 = alm2[contR];
 			alm1++;
 			contR--;
