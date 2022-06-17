@@ -355,11 +355,16 @@ char** carga(char** figura){
 	return tmp2;
 
 }
+
+// crea una imagen producto de repetir horizontalmente n veces la imagen original
 char** repeatH(char** figura, int n){
+	// se carga la imagen
 	char** repF = carga(figura);
 	char** tmp;
+	// recorre n veces
 	while(n != 1){
 		tmp = repF;
+		// se llama a la funcion join para añadir la imagen
 		repF = join(repF, figura);
 		n--;
 	}
