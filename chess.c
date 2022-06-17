@@ -265,7 +265,7 @@ char** up(char** arriba, char** abajo){
 		}
 		*alm1 = 0;
 		tmp++;
-		tmp3Arriba;
+		tmp3Arriba++;
 	}
 
 	tmp3Arriba = tmp3Abajo;
@@ -285,7 +285,7 @@ char** up(char** arriba, char** abajo){
 		}
 		*alm1 = 0;
 		tmp++;
-		tmp3Arriba;
+		tmp3Arriba++;
 	}
 
 	*tmp = 0;

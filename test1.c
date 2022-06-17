@@ -3,13 +3,12 @@
 
 void display(){
 
-	char** tmp = up(rook,rook);
+	char** tmp = up(rook,queen);
 
-	char** tmp2 = up(tmp,queen);
 
-	interpreter(tmp2);
+	interpreter(tmp);
 
-	libMemoria(tmp2);
+	libMemoria(tmp);
 
 	
 }
