@@ -317,7 +317,7 @@ char** up(char** arriba, char** abajo){
 	return tmp2;
 }
 
-
+// se muestra la imagen original.
 char** carga(char** figura){
 	//calculamos altura y ancho
 	int l = altura(figura);
@@ -332,19 +332,20 @@ char** carga(char** figura){
 	char* alm1;
 	char* alm2;
 
-	// se crea un contador para recorrer
-	int cont = 0;
+	// se recorre la figura
 	while(*tmp3){
 		//cargamos el bloque de memoria con el ancho de la figura
 		*tmp = (char*) malloc(sizeof(char) * a);
+
+		//se carga en los alm1 alm2
 		alm1 = *tmp;
 		alm2 = *tmp3;
 
 		while(*alm2){
+			// se dan los valores
 			*alm1 = *alm2;
 			alm1++;
 			alm2++;
-			cont++;
 		}
 		*alm1 = 0;
 		tmp++;
