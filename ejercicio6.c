@@ -19,10 +19,11 @@ void display(){
 	char** c6 = join(c5, knight);
 	char** c7 = join(c6, rook);
 	char** c8 = up(c7,repeatH(pawn,8));
+	char** c9 = up(repeatH(pawn,8), c7);
 
 	//superposicion
 	char** fichasWhite = superImpose(c8, upSquare);
-	char** fichasBlack = superImpose(reverse(c8), upSquare);
+	char** fichasBlack = superImpose(reverse(c9), upSquare);
 	//Union
 	
 	char** tmp = up(fichasWhite,up(tablero,fichasBlack));
