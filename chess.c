@@ -227,7 +227,71 @@ char** join(char** izq, char** der){
 	return tmp2;
 }
 
-char** up(char**, char**);
+char** up(char** arriba, char** abajo){
+	//calculamos altura de ambas ya que va a variar la altura sumando estas.
+	int lArriba = altura(arriba);
+	int lAbajo = altura(abajo);
+	int l = lArriba + lAbajo;
+
+	//calculamos el ancho de la figura, se calcula una vez ya que es igual este.
+	int a = ancho(arriba);
+
+	//cargamos el bloque de memoria
+	char** tmp = (char**) malloc(sizeof(char*) * (l +1));
+	//respaldamos tmp en tmp2
+	char** tmp2 = tmp;
+
+	char** tmp3Arriba = arriba;
+
+
+	char* alm1;
+	char* alm2;
+
+
+	char** tmp3Abajo = abajo;
+
+	//se ejecuta este bucle hasta que llegue a 0 el recorrido
+	while(*tmp3Arriba){
+
+		//cargamos el bloque de memoria con el ancho de la figura
+		*tmp = (char*) malloc(sizeof(char) * (a + 1));
+		alm1 = *tmp;
+		alm2 = *tmp3Arriba;
+
+		while(*alm2){
+			*alm1 = *alm2;
+			alm1++;
+			alm2++;
+		}
+		*alm1 = 0;
+		tmp++;
+		tmp3Arriba;
+	}
+
+	tmp3Arriba = tmp3Abajo;
+
+
+	while(*tmp3Arriba){
+
+		//cargamos el bloque de memoria con el ancho de la figura
+		*tmp = (char*) malloc(sizeof(char) * (a + 1));
+		alm1 = *tmp;
+		alm2 = *tmp3Arriba;
+
+		while(*alm2){
+			*alm1 = *alm2;
+			alm1++;
+			alm2++;
+		}
+		*alm1 = 0;
+		tmp++;
+		tmp3Arriba;
+	}
+
+	*tmp = 0;
+	return tmp2;
+}
+
 
 char** carga(char** figura){
 	//calculamos altura y ancho
