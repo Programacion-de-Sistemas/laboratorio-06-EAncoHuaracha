@@ -372,12 +372,17 @@ char** repeatH(char** figura, int n){
 	return repF;
 }
 
-
+// crea una imagen producto de repetir verticalmente n veces la imagen original
 char** repeatV(char** figura, int n){
+
+	// se carga la figura
 	char** repF = carga(figura);
 	char** tmp;
+
+	// se recorre n veces
 	while(n != 1){
 		tmp = repF;
+		//se llama a la funcion up para poner arriba las imagenes
 		repF = up(repF, figura);
 		n--;
 	}
