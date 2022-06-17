@@ -94,6 +94,7 @@ char** flipV(char** figura){
 
 }
 
+// crea una imagen que es un espejo horizontal de la imagen original
 char** flipH(char** figura){
 	//calculamos altura y ancho
 	int l = altura(figura);
@@ -116,8 +117,10 @@ char** flipH(char** figura){
 		//cargamos el bloque de memoria con el ancho de la figura
 		*tmp = (char*) malloc(sizeof(char) * (a + 1));
 		alm1 = *tmp;
+		//se obtiene con & la direccion de memoria de tmp3 y luego se almacena
 		alm2 = &tmp3[contR][0];
 
+		// recorremos el puntero
 		while(*alm2){
 			*alm1 = *alm2;
 			alm1++;
