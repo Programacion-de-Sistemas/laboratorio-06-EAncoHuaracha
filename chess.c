@@ -138,6 +138,7 @@ char** rotateL(char**);
 
 char** rotateR(char**);
 
+// crea una imagen producto de poner una imagen sobre otra
 char** superImpose(char** sobre, char** abajo){
 
 	//calculamos altura y ancho
@@ -151,14 +152,19 @@ char** superImpose(char** sobre, char** abajo){
 	char* alm1 = *tmp;
 	char* alm2 = *sobre;
 	char* alm3 = *abajo;
-
+	
+	//se recorre la primera imagen
 	while(*sobre){
 		*tmp = (char*) malloc(sizeof(char) * (a + 1));
+
+		//se dan los valores a alm1 alm2 alm3
 		alm1 = *tmp;
 		alm2 = *sobre;
 		alm3 = *abajo;
 
+		//recorre el puntero *alm2 viene a ser la segunda figura
 		while(*alm2){
+			// si el valor es espacio se ingresa el puntero
 			if(*alm2 == ' ')
 				*alm1 = *alm3;
 			else
