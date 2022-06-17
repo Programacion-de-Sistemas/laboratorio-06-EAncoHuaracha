@@ -183,7 +183,10 @@ char** superImpose(char** sobre, char** abajo){
 	*tmp = 0;
 	return tmp2;
 }
+
+// crea una imagen producto de poner una imagen al lado de otra
 char** join(char** izq, char** der){
+
 	//calculamos altura y ancho de la figura a la izquierda
 	int l = altura(izq);
 	int aIzq = ancho(izq);
@@ -194,10 +197,8 @@ char** join(char** izq, char** der){
 	char** tmp2 = tmp;
 	char** tmp3Izq = izq;
 
-
 	char* alm1;
 	char* alm2;
-
 
 	//Calculamos el ancho de la figura de la derecha
 	//No se calcula la altura ya que es la misma
@@ -213,15 +214,24 @@ char** join(char** izq, char** der){
 		alm1 = *tmp3Izq;
 		alm2 = *tmp;
 
+		//recorremos el puntero *alm1 viene a ser la figura de la izquierda
 		while(*alm1){
+			// se dan los valores
 			*alm2 = *alm1;
+			// siguiente
 			alm1++;
 			alm2++;
 		}
 
+		// se carga el puntero en alm1
 		alm1 = *tmp3Der;
+
+		// se recorre *alm1
 		while(*alm1){
+			// se dan los valores
 			*alm2 = *alm1;
+
+			//siguiente
 			alm1++;
 			alm2++;
 		}
