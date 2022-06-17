@@ -3,8 +3,7 @@
 
 void display(){
 
-	char** tmp = up(rook,queen);
-
+	char** tmp = repeatV(rook,4);
 
 	interpreter(tmp);
 

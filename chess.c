@@ -342,7 +342,18 @@ char** repeatH(char** figura, int n){
 }
 
 
-char** repeatV(char**, int);
+char** repeatV(char** figura, int n){
+	char** repF = carga(figura);
+	char** tmp;
+	while(n != 1){
+		tmp = repF;
+		repF = up(repF, figura);
+		n--;
+	}
+
+	return repF;
+}
+
 
 char** reverse(char** figura){
 	//calculamos altura y ancho
