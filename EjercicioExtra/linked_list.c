@@ -12,27 +12,23 @@ node;
 int main(){
 	node *list=NULL;
 
-	//agregamos un elemento a la lista
-	node *n = malloc(sizeof(node)); //asignando memoria para node
-	if(n==NULL){
-		return 1;
+	int n,num;
+
+
+	//pedimos ingresar la cantidad de n numeros para la lista
+	printf("ingrese la cantidad de numeros: ");
+	scanf("%d", &n);
+	
+	//Bucle para preguntar las n veces
+	for(int i=0; i<n; i++){
+
+		//pedir numero
+		printf("Ingrese el numero: ");
+		scanf("%d", &num);
+		printf("%d\n", num);
+
 	}
-	n->number=45;
-	n->next=NULL;
 
-	node *n_2 = malloc(sizeof(node)); //asignando memoria para node
-	if(n_2==NULL){
-		return 1;
-	}
-	n_2->number=15;
-	n_2->next=NULL;
-
-	//actualizar el punto next del primer elemento
-	n->next=n_2;
-
-
-	//actualizamos la lista
-	list=n;
 
 	// imprimir los elementos de la lista
 	for (node *tmp = list;tmp!=NULL;tmp=tmp->next)
