@@ -206,7 +206,7 @@ char** join(char** izq, char** der){
 	int a = aIzq + aDer;
 	char** tmp3Der = der;
 
-	//se ejecuta este bucle hasta que llegue a 0 el recorrido
+	//se recorre todo la figura de la izquierda
 	while(*tmp3Izq){
 
 		//cargamos el bloque de memoria con el ancho de la figura
@@ -245,6 +245,7 @@ char** join(char** izq, char** der){
 	return tmp2;
 }
 
+// crea una imagen producto de poner una imagen encima otra
 char** up(char** arriba, char** abajo){
 	//calculamos altura de ambas ya que va a variar la altura sumando estas.
 	int lArriba = altura(arriba);
@@ -268,16 +269,21 @@ char** up(char** arriba, char** abajo){
 
 	char** tmp3Abajo = abajo;
 
-	//se ejecuta este bucle hasta que llegue a 0 el recorrido
+	//se recorre la figura de arriba
 	while(*tmp3Arriba){
 
 		//cargamos el bloque de memoria con el ancho de la figura
 		*tmp = (char*) malloc(sizeof(char) * (a + 1));
+		
+		// se carga alm1 alm2
 		alm1 = *tmp;
 		alm2 = *tmp3Arriba;
 
 		while(*alm2){
+			// se dan los valores
 			*alm1 = *alm2;
+
+			//siguiente
 			alm1++;
 			alm2++;
 		}
@@ -286,9 +292,10 @@ char** up(char** arriba, char** abajo){
 		tmp3Arriba++;
 	}
 
+	// se establece la figura de abajo
 	tmp3Arriba = tmp3Abajo;
 
-
+	// se recorre la figura de abajo
 	while(*tmp3Arriba){
 
 		//cargamos el bloque de memoria con el ancho de la figura
